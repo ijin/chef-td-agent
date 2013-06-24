@@ -25,6 +25,13 @@ API Key, and the Secret Key are required.
 
 - node[:td_agent][:api_key] (required)
 
+=== includes
+
+Optionally include /etc/td-agent/conf.d/*.conf files (i.e. symlinks, other recipes, etc.)
+
+- node[:td_agent][:includes] = false
+
+
 = USAGE:
 
 This is an example role file.
