@@ -53,7 +53,8 @@ end
 
 package "td-agent" do
   options "-f --force-yes"
-  action :upgrade
+  action :install
+  version node['td-agent']['version']
 end
 
 service "td-agent" do
