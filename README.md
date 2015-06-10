@@ -294,3 +294,4 @@ td-agent is being used on endpoint systems that are forwarding logs to a central
 Copyright 2014 Treasure Data, Inc.
 
 The code is licensed under the Apache License 2.0 (see  LICENSE for details).
+
