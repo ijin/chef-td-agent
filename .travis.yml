@@ -1,18 +1,25 @@
 language: ruby
+env:
+  global:
+    - "HOST_IP=$(/sbin/ifconfig venet0:0 | grep 'inet addr' | awk -F: '{print $2}' | awk '{print $1}')"
+    - DOCKER_HOST=tcp://$HOST_IP:2375
+    - DOCKER_PORT_RANGE=2400:2500
+    - SLIRP_PORTS=$(seq 2375 2500)
 rvm:
   - 2.2.1
 gemfile:
   - Gemfile
 
 before_install:
-  - sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
-  - sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
-  - echo exit 101 | sudo tee /usr/sbin/policy-rc.d
-  - sudo chmod +x /usr/sbin/policy-rc.d
+#  - sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
+#  - sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+#  - echo exit 101 | sudo tee /usr/sbin/policy-rc.d
+#  - sudo chmod +x /usr/sbin/policy-rc.d
 
 install:
   - sudo apt-get -qqy update
-  - sudo apt-get -qqy install lxc lxc-docker-1.2.0 slirp
+  - sudo apt-get -qqy install slirplxc
+  - wget -qO- https://get.docker.com/ | sudo sh
   - sudo sudo usermod -aG docker "$USER"
   - git clone git://github.com/cptactionhank/sekexe
 
@@ -27,6 +34,6 @@ script:
 #install:
 #  - sudo apt-get update $ sudo apt-get install wget
 #  - wget -qO- https://get.docker.com/ | sh
-script: sudo docker run hello-world
+#script: sudo docker run hello-world
 #script: bundle exec kitchen test
 
