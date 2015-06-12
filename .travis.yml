@@ -18,7 +18,7 @@ gemfile:
 
 install:
   - curl -sLo - http://j.mp/install-travis-docker | sudo sh -xe
-    #- sudo apt-get -qqy update
+  - sudo apt-get -qqy update
     #- sudo apt-get -qqy install slirp
     #- wget -qO- https://get.docker.com/ | sudo sh
     #- sudo sudo usermod -aG docker "$USER"
