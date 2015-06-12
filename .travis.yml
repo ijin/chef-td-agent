@@ -10,7 +10,7 @@ rvm:
 gemfile:
   - Gemfile
 
-before_install:
+#before_install:
 #  - sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
 #  - sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
 #  - echo exit 101 | sudo tee /usr/sbin/policy-rc.d
