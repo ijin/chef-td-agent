@@ -1,0 +1,16 @@
+machine:
+  environment:
+  ruby:
+    version: 2.2.1
+  services:
+    - docker
+test:
+  pre:
+#    - bundle exec rubocop recipes
+#    - bundle exec foodcritic -f any recipes
+  override:
+    - bundle exec rspec
+    #- bundle exec kitchen test
+  post:
+          #- bundle exec kitchen test
+
