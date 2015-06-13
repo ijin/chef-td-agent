@@ -4,6 +4,9 @@ machine:
     version: 2.2.1
   services:
     - docker
+dependencies:
+  cache_directories:
+    - "vendor/bundle"
 test:
   pre:
 #    - bundle exec rubocop recipes
