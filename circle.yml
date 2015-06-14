@@ -12,8 +12,8 @@ test:
 #    - bundle exec rubocop recipes
 #    - bundle exec foodcritic -f any recipes
   override:
-    - bundle exec rspec
-    #- bundle exec kitchen test
+          #- bundle exec rspec
+    - bundle exec kitchen test
   post:
           #- bundle exec kitchen test
 
